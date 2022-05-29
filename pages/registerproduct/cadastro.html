@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cadastrar Produto</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="../../assets/css/button.css">
+	<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+<section class="block-form">
+	<form action="api-register/cadastro.php" method="POST" class="pure-form">
+		<div class="center">
+		<label>Produto:</label>
+		<input type="text" name="produto" autocomplete="off">
+
+		<label>Preço (R$):</label>
+		<input type="text" autocomplete="off" name="preco" id="price-value">
+		<script>
+			$(document).ready(function(){
+				$('#price-value').mask('000.000.000.000.000,00', {reverse: true});
+			});
+		</script>
+		<select name="categoria" id="state">
+			<option value="null" selected>Categoria</option>
+			<option value="Televisão">Televisão</option>
+			<option value="Smartphone">Smartphone</option>
+			<option value="Computador">Computador</option>
+		</select>
+		<button class="pure-button pure-button-primary" type="submit">Cadastrar</button>
+		</div>
+	</form>
+</section>
+</body>
+
+</html>
